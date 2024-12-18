@@ -1,14 +1,26 @@
 <!doctype html>
 <html lang="en">
-<head>
+
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Christmas Matching Game</title>
     <link rel="stylesheet" href="index.css">
-</head>
-<body>
+  </head>
+
+  <body>
     <h1>Christmas Matching Game</h1>
+    <h3>
+      <span id="scorer">Your Score: 0</span>
+      <span id="highest-scorer">Highest Score:</div>
+    </h3>
     <div class="game-container" id="game-board"></div>
-    <script src="index.js"></script>
-</body>
+    <h4>Scoring Rules:</h4>
+    <ul>
+      <li><b>+3 points</b> for each correct pair matching</li>
+      <li><b>-1 point</b> for each wrong pair matching</li>
+    </ul>
+    <script type="module" src="index.js"></script>
+  </body>
+
 </html>

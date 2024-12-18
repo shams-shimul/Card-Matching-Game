@@ -1,39 +1,112 @@
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-family: Arial, sans-serif;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-family: Arial, sans-serif;
+	height: 100vh;
+	margin: 0;
+	background-color: #f0f0f0;
 }
 
 h1 {
-    color: darkred;
+	color: darkred;
+}
+
+h3 {
+	display: flex;
+	gap: 100px;
 }
 
 .game-container {
-    display: grid;
-    grid-template-columns: repeat(4, 100px);
-    gap: 10px;
+	display: grid;
+	grid-template-columns: repeat(4, 100px);
+	gap: 10px;
+	position: relative;
 }
 
 .card {
-    width: 100px;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: darkgreen;
-    color: white;
-    font-size: 2rem;
-    cursor: pointer;
-    border-radius: 8px;
+	width: 100px;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: darkgreen;
+	color: white;
+	font-size: 2rem;
+	cursor: pointer;
+	border-radius: 8px;
 }
 
 .card.revealed {
-    background-color: #fff;
-    color: black;
-    cursor: default;
+	background-color: #fff;
+	color: black;
+	cursor: default;
+}
+
+.card.revealed.matched {
+	filter: blur(3px);
+}
+
+.restart-btn {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	translate: -50% -50%;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 1em 2.5em;
+	display: inline-block;
+	cursor: pointer;
+	border: none;
+	border-radius: 100px;
+	transition: all 0.2s;
+	font-weight: bold;
+	color: honeydew;
+	background-color: darkgreen;
+}
+
+.restart-btn:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+	color: white;
+}
+
+.restart-btn:active {
+	transform: translateY(-1px);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.restart-btn::after {
+	content: "";
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	border-radius: 100px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	transition: all 0.4s;
+	background-color: green;
+}
+
+.restart-btn:hover::after {
+	transform: scaleX(1.4) scaleY(1.6);
+	opacity: 0;
+}
+
+h4 {
+	margin: 2em 0 0.5em;
+	text-decoration: underline;
+}
+
+ul {
+	margin: 0;
+	list-style-type: "#";
+}
+
+ul li {
+	line-height: 24px;
+	padding-left: 6px;
 }
